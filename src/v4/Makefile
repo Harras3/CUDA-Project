@@ -12,7 +12,7 @@ $(EXE): $(SRC)
 
 run: $(EXE)
 	@echo "Running CUDA application and measuring execution time..."
-	@time ./$(EXE)
+	./$(EXE)
 
 profile: $(EXE)
 	@echo "Profiling with nvprof..."
