@@ -1,0 +1,324 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  ms/call  ms/call  name    
+ 47.01      0.63     0.63        2   315.00   315.00  loadMNISTImages(char const*, int)
+  5.97      0.71     0.08                             __cudart545
+  3.73      0.76     0.05                             __cudart773
+  3.73      0.81     0.05                             __cudart798
+  2.99      0.85     0.04                             __cudaPushCallConfiguration
+  2.99      0.89     0.04                             __cudart1608
+  2.99      0.93     0.04                             _init
+  2.24      0.96     0.03   190000     0.00     0.00  __device_stub__Z19forwardHiddenKernelPdS_S_S_ii(double*, double*, double*, double*, int, int)
+  2.24      0.99     0.03   180000     0.00     0.00  backward(NeuralNetwork*, double*, double*)
+  2.24      1.02     0.03        1    30.00   147.37  train(NeuralNetwork*, double**, double**, int)
+  2.24      1.05     0.03                             __cudaPopCallConfiguration
+  2.24      1.08     0.03                             __cudart513
+  2.24      1.11     0.03                             __cudart643
+  2.24      1.14     0.03                             cudaLaunchKernel
+  1.49      1.16     0.02   360000     0.00     0.00  __device_stub__Z18updateBiasesKernelPdS_di(double*, double*, double, int)
+  1.49      1.18     0.02   190000     0.00     0.00  forward(NeuralNetwork*, double*, double*, double*)
+  1.49      1.20     0.02                             __cudart644
+  1.49      1.22     0.02                             __cudart714
+  1.49      1.24     0.02                             cudaMemcpy
+  0.75      1.25     0.01   180000     0.00     0.00  __device_stub__Z20outputGradientKernelPdS_S_i(double*, double*, double*, int)
+  0.75      1.26     0.01   180000     0.00     0.00  __device_stub__Z25updateHiddenWeightsKernelPdS_S_dii(double*, double*, double*, double, int, int)
+  0.75      1.27     0.01        1    10.00    12.63  evaluate(NeuralNetwork*, double**, double**, int)
+  0.75      1.28     0.01                             __cudart556
+  0.75      1.29     0.01                             __cudart557
+  0.75      1.30     0.01                             __cudart582
+  0.75      1.31     0.01                             __cudart610
+  0.75      1.32     0.01                             __cudart715
+  0.75      1.33     0.01                             __cudart996
+  0.75      1.34     0.01                             cudaGetLastError
+  0.00      1.34     0.00   190000     0.00     0.00  __device_stub__Z10reluKernelPdi(double*, int)
+  0.00      1.34     0.00   190000     0.00     0.00  __device_stub__Z13softmaxKernelPdi(double*, int)
+  0.00      1.34     0.00   190000     0.00     0.00  __device_stub__Z19forwardOutputKernelPdS_S_S_ii(double*, double*, double*, double*, int, int)
+  0.00      1.34     0.00   180000     0.00     0.00  __device_stub__Z20hiddenGradientKernelPdS_S_S_ii(double*, double*, double*, double*, int, int)
+  0.00      1.34     0.00   180000     0.00     0.00  __device_stub__Z25updateOutputWeightsKernelPdS_S_dii(double*, double*, double*, double, int, int)
+  0.00      1.34     0.00        4     0.00     0.00  freeMatrixHost(double**, int)
+  0.00      1.34     0.00        2     0.00     0.00  loadMNISTLabels(char const*, int)
+  0.00      1.34     0.00        1     0.00     0.00  freeNetwork(NeuralNetwork*)
+  0.00      1.34     0.00        1     0.00     0.00  createNetwork()
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+Copyright (C) 2012-2024 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+		     Call graph (explanation follows)
+
+
+granularity: each sample hit covers 4 byte(s) for 0.75% of 1.34 seconds
+
+index % time    self  children    called     name
+                                                 <spontaneous>
+[1]     59.0    0.00    0.79                 main [1]
+                0.63    0.00       2/2           loadMNISTImages(char const*, int) [2]
+                0.03    0.12       1/1           train(NeuralNetwork*, double**, double**, int) [3]
+                0.01    0.00       1/1           evaluate(NeuralNetwork*, double**, double**, int) [21]
+                0.00    0.00       4/4           freeMatrixHost(double**, int) [417]
+                0.00    0.00       2/2           loadMNISTLabels(char const*, int) [418]
+                0.00    0.00       1/1           createNetwork() [420]
+                0.00    0.00       1/1           freeNetwork(NeuralNetwork*) [419]
+-----------------------------------------------
+                0.63    0.00       2/2           main [1]
+[2]     47.0    0.63    0.00       2         loadMNISTImages(char const*, int) [2]
+-----------------------------------------------
+                0.03    0.12       1/1           main [1]
+[3]     11.0    0.03    0.12       1         train(NeuralNetwork*, double**, double**, int) [3]
+                0.03    0.04  180000/180000      backward(NeuralNetwork*, double*, double*) [5]
+                0.02    0.03  180000/190000      forward(NeuralNetwork*, double*, double*, double*) [6]
+-----------------------------------------------
+                                                 <spontaneous>
+[4]      6.0    0.08    0.00                 __cudart545 [4]
+-----------------------------------------------
+                0.03    0.04  180000/180000      train(NeuralNetwork*, double**, double**, int) [3]
+[5]      5.2    0.03    0.04  180000         backward(NeuralNetwork*, double*, double*) [5]
+                0.02    0.00  360000/360000      __device_stub__Z18updateBiasesKernelPdS_di(double*, double*, double, int) [18]
+                0.01    0.00  180000/180000      __device_stub__Z20outputGradientKernelPdS_S_i(double*, double*, double*, int) [23]
+                0.01    0.00  180000/180000      __device_stub__Z25updateHiddenWeightsKernelPdS_S_dii(double*, double*, double*, double, int, int) [24]
+                0.00    0.00  180000/180000      __device_stub__Z20hiddenGradientKernelPdS_S_S_ii(double*, double*, double*, double*, int, int) [415]
+                0.00    0.00  180000/180000      __device_stub__Z25updateOutputWeightsKernelPdS_S_dii(double*, double*, double*, double, int, int) [416]
+-----------------------------------------------
+                0.00    0.00   10000/190000      evaluate(NeuralNetwork*, double**, double**, int) [21]
+                0.02    0.03  180000/190000      train(NeuralNetwork*, double**, double**, int) [3]
+[6]      3.7    0.02    0.03  190000         forward(NeuralNetwork*, double*, double*, double*) [6]
+                0.03    0.00  190000/190000      __device_stub__Z19forwardHiddenKernelPdS_S_S_ii(double*, double*, double*, double*, int, int) [13]
+                0.00    0.00  190000/190000      __device_stub__Z10reluKernelPdi(double*, int) [412]
+                0.00    0.00  190000/190000      __device_stub__Z19forwardOutputKernelPdS_S_S_ii(double*, double*, double*, double*, int, int) [414]
+                0.00    0.00  190000/190000      __device_stub__Z13softmaxKernelPdi(double*, int) [413]
+-----------------------------------------------
+                                                 <spontaneous>
+[7]      3.7    0.05    0.00                 __cudart773 [7]
+-----------------------------------------------
+                                                 <spontaneous>
+[8]      3.7    0.05    0.00                 __cudart798 [8]
+-----------------------------------------------
+                                                 <spontaneous>
+[9]      3.0    0.04    0.00                 __cudaPushCallConfiguration [9]
+-----------------------------------------------
+                                                 <spontaneous>
+[10]     3.0    0.04    0.00                 __cudart1608 [10]
+-----------------------------------------------
+                                                 <spontaneous>
+[11]     3.0    0.04    0.00                 _init [11]
+-----------------------------------------------
+                                                 <spontaneous>
+[12]     2.2    0.03    0.00                 cudaLaunchKernel [12]
+-----------------------------------------------
+                0.03    0.00  190000/190000      forward(NeuralNetwork*, double*, double*, double*) [6]
+[13]     2.2    0.03    0.00  190000         __device_stub__Z19forwardHiddenKernelPdS_S_S_ii(double*, double*, double*, double*, int, int) [13]
+-----------------------------------------------
+                                                 <spontaneous>
+[14]     2.2    0.03    0.00                 __cudaPopCallConfiguration [14]
+-----------------------------------------------
+                                                 <spontaneous>
+[15]     2.2    0.03    0.00                 __cudart513 [15]
+-----------------------------------------------
+                                                 <spontaneous>
+[16]     2.2    0.03    0.00                 __cudart643 [16]
+-----------------------------------------------
+                                                 <spontaneous>
+[17]     1.5    0.02    0.00                 cudaMemcpy [17]
+-----------------------------------------------
+                0.02    0.00  360000/360000      backward(NeuralNetwork*, double*, double*) [5]
+[18]     1.5    0.02    0.00  360000         __device_stub__Z18updateBiasesKernelPdS_di(double*, double*, double, int) [18]
+-----------------------------------------------
+                                                 <spontaneous>
+[19]     1.5    0.02    0.00                 __cudart644 [19]
+-----------------------------------------------
+                                                 <spontaneous>
+[20]     1.5    0.02    0.00                 __cudart714 [20]
+-----------------------------------------------
+                0.01    0.00       1/1           main [1]
+[21]     0.9    0.01    0.00       1         evaluate(NeuralNetwork*, double**, double**, int) [21]
+                0.00    0.00   10000/190000      forward(NeuralNetwork*, double*, double*, double*) [6]
+-----------------------------------------------
+                                                 <spontaneous>
+[22]     0.7    0.01    0.00                 cudaGetLastError [22]
+-----------------------------------------------
+                0.01    0.00  180000/180000      backward(NeuralNetwork*, double*, double*) [5]
+[23]     0.7    0.01    0.00  180000         __device_stub__Z20outputGradientKernelPdS_S_i(double*, double*, double*, int) [23]
+-----------------------------------------------
+                0.01    0.00  180000/180000      backward(NeuralNetwork*, double*, double*) [5]
+[24]     0.7    0.01    0.00  180000         __device_stub__Z25updateHiddenWeightsKernelPdS_S_dii(double*, double*, double*, double, int, int) [24]
+-----------------------------------------------
+                                                 <spontaneous>
+[25]     0.7    0.01    0.00                 __cudart556 [25]
+-----------------------------------------------
+                                                 <spontaneous>
+[26]     0.7    0.01    0.00                 __cudart557 [26]
+-----------------------------------------------
+                                                 <spontaneous>
+[27]     0.7    0.01    0.00                 __cudart582 [27]
+-----------------------------------------------
+                                                 <spontaneous>
+[28]     0.7    0.01    0.00                 __cudart610 [28]
+-----------------------------------------------
+                                                 <spontaneous>
+[29]     0.7    0.01    0.00                 __cudart715 [29]
+-----------------------------------------------
+                                                 <spontaneous>
+[30]     0.7    0.01    0.00                 __cudart996 [30]
+-----------------------------------------------
+                0.00    0.00  190000/190000      forward(NeuralNetwork*, double*, double*, double*) [6]
+[412]    0.0    0.00    0.00  190000         __device_stub__Z10reluKernelPdi(double*, int) [412]
+-----------------------------------------------
+                0.00    0.00  190000/190000      forward(NeuralNetwork*, double*, double*, double*) [6]
+[413]    0.0    0.00    0.00  190000         __device_stub__Z13softmaxKernelPdi(double*, int) [413]
+-----------------------------------------------
+                0.00    0.00  190000/190000      forward(NeuralNetwork*, double*, double*, double*) [6]
+[414]    0.0    0.00    0.00  190000         __device_stub__Z19forwardOutputKernelPdS_S_S_ii(double*, double*, double*, double*, int, int) [414]
+-----------------------------------------------
+                0.00    0.00  180000/180000      backward(NeuralNetwork*, double*, double*) [5]
+[415]    0.0    0.00    0.00  180000         __device_stub__Z20hiddenGradientKernelPdS_S_S_ii(double*, double*, double*, double*, int, int) [415]
+-----------------------------------------------
+                0.00    0.00  180000/180000      backward(NeuralNetwork*, double*, double*) [5]
+[416]    0.0    0.00    0.00  180000         __device_stub__Z25updateOutputWeightsKernelPdS_S_dii(double*, double*, double*, double, int, int) [416]
+-----------------------------------------------
+                0.00    0.00       4/4           main [1]
+[417]    0.0    0.00    0.00       4         freeMatrixHost(double**, int) [417]
+-----------------------------------------------
+                0.00    0.00       2/2           main [1]
+[418]    0.0    0.00    0.00       2         loadMNISTLabels(char const*, int) [418]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[419]    0.0    0.00    0.00       1         freeNetwork(NeuralNetwork*) [419]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[420]    0.0    0.00    0.00       1         createNetwork() [420]
+-----------------------------------------------
+
+ This table describes the call tree of the program, and was sorted by
+ the total amount of time spent in each function and its children.
+
+ Each entry in this table consists of several lines.  The line with the
+ index number at the left hand margin lists the current function.
+ The lines above it list the functions that called this function,
+ and the lines below it list the functions this one called.
+ This line lists:
+     index	A unique number given to each element of the table.
+		Index numbers are sorted numerically.
+		The index number is printed next to every function name so
+		it is easier to look up where the function is in the table.
+
+     % time	This is the percentage of the `total' time that was spent
+		in this function and its children.  Note that due to
+		different viewpoints, functions excluded by options, etc,
+		these numbers will NOT add up to 100%.
+
+     self	This is the total amount of time spent in this function.
+
+     children	This is the total amount of time propagated into this
+		function by its children.
+
+     called	This is the number of times the function was called.
+		If the function called itself recursively, the number
+		only includes non-recursive calls, and is followed by
+		a `+' and the number of recursive calls.
+
+     name	The name of the current function.  The index number is
+		printed after it.  If the function is a member of a
+		cycle, the cycle number is printed between the
+		function's name and the index number.
+
+
+ For the function's parents, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the function into this parent.
+
+     children	This is the amount of time that was propagated from
+		the function's children into this parent.
+
+     called	This is the number of times this parent called the
+		function `/' the total number of times the function
+		was called.  Recursive calls to the function are not
+		included in the number after the `/'.
+
+     name	This is the name of the parent.  The parent's index
+		number is printed after it.  If the parent is a
+		member of a cycle, the cycle number is printed between
+		the name and the index number.
+
+ If the parents of the function cannot be determined, the word
+ `<spontaneous>' is printed in the `name' field, and all the other
+ fields are blank.
+
+ For the function's children, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the child into the function.
+
+     children	This is the amount of time that was propagated from the
+		child's children to the function.
+
+     called	This is the number of times the function called
+		this child `/' the total number of times the child
+		was called.  Recursive calls by the child are not
+		listed in the number after the `/'.
+
+     name	This is the name of the child.  The child's index
+		number is printed after it.  If the child is a
+		member of a cycle, the cycle number is printed
+		between the name and the index number.
+
+ If there are any cycles (circles) in the call graph, there is an
+ entry for the cycle-as-a-whole.  This entry shows who called the
+ cycle (as parents) and the members of the cycle (as children.)
+ The `+' recursive calls entry shows the number of function calls that
+ were internal to the cycle, and the calls entry for each member shows,
+ for that member, how many times it was called from other members of
+ the cycle.
+
+Copyright (C) 2012-2024 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+Index by function name
+
+ [419] freeNetwork(NeuralNetwork*) [416] __device_stub__Z25updateOutputWeightsKernelPdS_S_dii(double*, double*, double*, double, int, int) [28] __cudart610
+ [420] createNetwork()         [3] train(NeuralNetwork*, double**, double**, int) [16] __cudart643
+ [417] freeMatrixHost(double**, int) [6] forward(NeuralNetwork*, double*, double*, double*) [19] __cudart644
+   [2] loadMNISTImages(char const*, int) [5] backward(NeuralNetwork*, double*, double*) [20] __cudart714
+ [418] loadMNISTLabels(char const*, int) [21] evaluate(NeuralNetwork*, double**, double**, int) [29] __cudart715
+ [412] __device_stub__Z10reluKernelPdi(double*, int) [14] __cudaPopCallConfiguration [7] __cudart773
+ [413] __device_stub__Z13softmaxKernelPdi(double*, int) [9] __cudaPushCallConfiguration [8] __cudart798
+  [18] __device_stub__Z18updateBiasesKernelPdS_di(double*, double*, double, int) [10] __cudart1608 [30] __cudart996
+  [23] __device_stub__Z20outputGradientKernelPdS_S_i(double*, double*, double*, int) [15] __cudart513 [11] _init
+  [13] __device_stub__Z19forwardHiddenKernelPdS_S_S_ii(double*, double*, double*, double*, int, int) [4] __cudart545 [22] cudaGetLastError
+ [414] __device_stub__Z19forwardOutputKernelPdS_S_S_ii(double*, double*, double*, double*, int, int) [25] __cudart556 [12] cudaLaunchKernel
+ [415] __device_stub__Z20hiddenGradientKernelPdS_S_S_ii(double*, double*, double*, double*, int, int) [26] __cudart557 [17] cudaMemcpy
+  [24] __device_stub__Z25updateHiddenWeightsKernelPdS_S_dii(double*, double*, double*, double, int, int) [27] __cudart582

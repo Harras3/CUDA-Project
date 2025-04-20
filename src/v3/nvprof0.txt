@@ -1,0 +1,36 @@
+==11641== NVPROF is profiling process 11641, command: ./nn_cuda
+==11641== Profiling application: ./nn_cuda
+==11641== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:   45.16%  1.51718s      2971  510.66us  134.63us  663.99us  forwardHiddenKernel(double*, double*, double*, double*, int, int, int)
+                   34.90%  1.17234s      2814  416.61us  262.98us  486.35us  updateHiddenWeightsKernel(double*, double*, double*, double, int, int, int)
+                   12.15%  408.18ms      5789  70.509us     192ns  256.46us  [CUDA memcpy HtoD]
+                    1.92%  64.665ms      2971  21.765us  8.9920us  26.401us  softmaxKernel(double*, int, int)
+                    1.74%  58.415ms      5785  10.097us  1.0560us  30.113us  [CUDA memcpy DtoH]
+                    1.55%  52.072ms      2971  17.526us  12.256us  20.289us  forwardOutputKernel(double*, double*, double*, double*, int, int, int)
+                    0.84%  28.306ms      2814  10.059us  6.5280us  13.504us  updateOutputWeightsKernel(double*, double*, double*, double, int, int, int)
+                    0.79%  26.650ms      5628  4.7350us  3.3920us  11.904us  updateBiasesKernel(double*, double*, double, int, int)
+                    0.59%  19.903ms      2814  7.0720us  4.0960us  11.329us  hiddenGradientKernel(double*, double*, double*, double*, int, int, int)
+                    0.24%  8.1725ms      2971  2.7500us  1.4410us  12.481us  reluKernel(double*, int)
+                    0.11%  3.5733ms      2814  1.2690us  1.0870us  12.673us  outputGradientKernel(double*, double*, double*, int, int)
+      API calls:   81.55%  2.99758s      2971  1.0089ms  8.2290us  1.5095ms  cudaStreamSynchronize
+                    9.61%  353.12ms     28768  12.274us  5.5800us  1.3528ms  cudaLaunchKernel
+                    4.26%  156.42ms     11570  13.519us  4.3880us  870.58us  cudaMemcpyAsync
+                    3.12%  114.57ms         1  114.57ms  114.57ms  114.57ms  cudaDeviceSetLimit
+                    1.25%  45.968ms         1  45.968ms  45.968ms  45.968ms  cudaDeviceReset
+                    0.12%  4.3965ms         6  732.75us  5.1160us  2.5331ms  cudaMallocHost
+                    0.05%  1.6702ms         6  278.36us  5.9480us  836.31us  cudaFreeHost
+                    0.02%  583.35us        16  36.459us  4.1050us  453.97us  cudaMalloc
+                    0.01%  500.83us         4  125.21us  7.5790us  264.96us  cudaMemcpy
+                    0.01%  475.79us        10  47.579us  4.7380us  265.97us  cudaStreamCreate
+                    0.01%  237.52us       114  2.0830us     274ns  84.010us  cuDeviceGetAttribute
+                    0.01%  193.96us        16  12.122us  3.5810us  108.66us  cudaFree
+                    0.00%  66.582us        10  6.6580us  4.0610us  26.202us  cudaStreamDestroy
+                    0.00%  27.925us         1  27.925us  27.925us  27.925us  cuDeviceGetName
+                    0.00%  12.397us         1  12.397us  12.397us  12.397us  cudaDeviceSetCacheConfig
+                    0.00%  9.8640us         1  9.8640us  9.8640us  9.8640us  cuDeviceGetPCIBusId
+                    0.00%  3.4040us         3  1.1340us     381ns  2.5340us  cuDeviceGetCount
+                    0.00%  1.3610us         2     680ns     300ns  1.0610us  cuDeviceGet
+                    0.00%     626ns         1     626ns     626ns     626ns  cuDeviceTotalMem
+                    0.00%     619ns         1     619ns     619ns     619ns  cuModuleGetLoadingMode
+                    0.00%     499ns         1     499ns     499ns     499ns  cuDeviceGetUuid
